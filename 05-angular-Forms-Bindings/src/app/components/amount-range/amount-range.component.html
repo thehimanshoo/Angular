@@ -1,0 +1,30 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-danger text-white">
+          <p class="h4">Select an Amount</p>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="customRange1">Product Cost : {{amount}}</label>
+              <input
+                name="amount"
+                [(ngModel)]="amount"
+                type="range" class="custom-range" id="customRange1" min="0" max="500000">
+            </div>
+            <div class="form-group">
+              <label for="customRange1">Product Tax : {{tax}}</label>
+              <input
+                name="tax"
+                [(ngModel)]="tax"
+                type="range" class="custom-range" id="customRange2" min="0" max="50">
+            </div>
+          </form>
+          <p class="h4">{{amount + tax | currency: 'INR'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

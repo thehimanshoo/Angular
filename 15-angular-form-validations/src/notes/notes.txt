@@ -1,0 +1,16 @@
+Form Validation in Angular
+--------------------------
+1) Template Driven Form Validation
+----------------------------------
+-> lot of validation code inside .html
+-> mostly used for simple validations
+-> FormsModule
+Ex : Enrollment
+
+2) Reactive Form Validation
+----------------------------
+-> lot of validation code inside .ts
+-> mostly used to complex validations
+-> ReactiveFormsModule
+Ex : Registration
+

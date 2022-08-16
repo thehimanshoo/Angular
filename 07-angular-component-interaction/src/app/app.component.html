@@ -1,0 +1,21 @@
+<nav class="navbar navbar-dark bg-danger navbar-expand-sm">
+  <a href="/" class="navbar-brand">Angular with Component Interaction</a>
+</nav>
+
+<!--<app-parent></app-parent>-->
+
+<!--<app-parent-card></app-parent-card>-->
+
+<!-- Complex interaction -->
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-4">
+      <app-client-card (sendParent)="fromClient=$event"></app-client-card>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+      <app-server-card [receiveText]="fromClient"></app-server-card>
+    </div>
+  </div>
+</div>

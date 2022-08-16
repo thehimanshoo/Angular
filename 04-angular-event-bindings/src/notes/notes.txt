@@ -1,0 +1,26 @@
+Bootstrap
+----------
+CSS ->
+
+-> bootstrap.css
+-> mdb.css
+-> styles.css
+
+JS ->
+
+-> jquery.js
+-> popper.js
+-> bootstrap.js
+-> mdb.js
+
+-> angular.json -> line 26
+
+
+ng g c card -> .html , .css , .ts -> app.module.ts
+
+
+
+
+
+
+

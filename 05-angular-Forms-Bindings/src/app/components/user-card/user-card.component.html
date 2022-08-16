@@ -1,0 +1,22 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-success text-white">
+          <p class="h4">Change Text (ngModel)</p>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <input
+                name="user"
+                [(ngModel)]="username"
+                type="text" class="form-control" placeholder="Username">
+            </div>
+            <p class="h3">{{username}}</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

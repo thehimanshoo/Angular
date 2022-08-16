@@ -1,0 +1,12 @@
+.card{
+  display: inline-block;
+  box-shadow: 0 0 10px black;
+  width: 250px;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 5px;
+  background: linear-gradient(45deg,deeppink, blueviolet);
+}
+.card-body .lead{
+  font-size: 18px;
+}

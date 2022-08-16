@@ -1,0 +1,43 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <p class="h3 text-danger">All Customers Here</p>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem eaque, harum necessitatibus nesciunt non possimus? A autem cum dignissimos, error facilis laborum magni nam, pariatur praesentium quidem quisquam sit.</p>
+      <a routerLink="/customers" class="btn btn-danger btn-sm">
+       <i class="fa fa-arrow-alt-circle-left"></i> Customers</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table table-danger text-center table-striped table-hover">
+        <thead class="bg-dark text-white">
+        <tr>
+          <th>SNO</th>
+          <th>NAME</th>
+          <th>EMAIL</th>
+          <th>PHONE</th>
+          <th>LOCATION</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let customer of customers">
+          <td>{{customer.login.uuid}}</td>
+          <td>
+            <a routerLink="/customers/list/{{customer.login.uuid}}" class="text-danger">{{customer.name.first}} {{customer.name.last}}
+              <i class="fa fa-arrow-alt-circle-right"></i>
+            </a>
+          </td>
+          <td>{{customer.email}}</td>
+          <td>{{customer.phone}}</td>
+          <td>{{customer.location.city}}</td>
+        </tr>
+        <tr *ngIf="errorMessage">
+          <td class="text-danger" colspan="5">
+            {{errorMessage}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

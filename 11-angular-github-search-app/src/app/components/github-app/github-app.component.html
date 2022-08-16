@@ -1,0 +1,44 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#ffffff" type = "ball-square-spin" [fullScreen] = "true"><p style="color: white" > please wait... </p></ngx-spinner>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <p class="h3 text-secondary">Github Profile Search</p>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consequuntur ea inventore itaque, nisi nobis reprehenderit? Ab culpa debitis dolore eum eveniet incidunt maiores, nam, nulla provident quis, voluptas voluptatum?</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form class="form-inline" (submit)="submitUser()">
+        <div class="form-group">
+          <input
+            name="githubUser"
+            [(ngModel)]="githubUser"
+            size="40" type="search" class="form-control" placeholder="Username">
+        </div>
+        <div>
+          <input type="submit" value="Search" class="btn btn-secondary btn-sm">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Github Profile Data -->
+<div class="container mt-3" *ngIf="githubProfile">
+  <div class="row">
+    <div class="col">
+      <app-github-profile [githubProfile]="githubProfile"></app-github-profile>
+    </div>
+  </div>
+</div>
+
+<!-- Github Repos Data -->
+<div class="container mt-3" *ngIf="githubRepos.length > 0">
+  <div class="row">
+    <div class="col">
+      <app-github-repos [githubRepos]="githubRepos" [githubProfile]="githubProfile"></app-github-repos>
+    </div>
+  </div>
+</div>
+
+

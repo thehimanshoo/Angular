@@ -1,0 +1,22 @@
+<div class="card" *ngIf="githubProfile">
+  <div class="card-header bg-secondary text-white">
+    <p class="h5">{{githubProfile.name}} Repositories</p>
+  </div>
+  <div class="card-body">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let repo of githubRepos">
+        <div class="row">
+          <div class="col">
+            <p class="lead">
+              <a [href]="repo.html_url" target="_blank">{{repo.full_name}}</a>
+            </p>
+          </div>
+          <div class="col">
+            <span class="badge badge-success mx-2">Stars : {{repo.stargazers_count}}</span>
+            <span class="badge badge-success mx-2">Watches : {{repo.watchers_count}}</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

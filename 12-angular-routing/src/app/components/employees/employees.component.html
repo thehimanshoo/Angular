@@ -1,0 +1,39 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#ffffff" type = "ball-square-spin" [fullScreen] = "true"><p style="color: white" > please wait... </p></ngx-spinner>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <p class="h3 text-danger">Employee Information</p>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab accusamus aliquid doloribus, esse eum labore laudantium nesciunt odio officiis placeat quod repudiandae rerum tenetur velit veritatis voluptates! Officia, quod!</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table table-danger text-center table-striped">
+        <thead class="bg-dark text-white">
+          <tr>
+            <th>SNO</th>
+            <th>FIRST NAME</th>
+            <th>LAST NAME</th>
+            <th>EMAIL</th>
+            <th>GENDER</th>
+            <th>IP ADDRESS</th>
+            <th>COUNTRY</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees">
+            <td>{{employee.id}}</td>
+            <td>
+              <a routerLink="/employees/{{employee.id}}" class="text-danger">{{employee.first_name}}</a>
+            </td>
+            <td>{{employee.last_name}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.ip_address}}</td>
+            <td>{{employee.country}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

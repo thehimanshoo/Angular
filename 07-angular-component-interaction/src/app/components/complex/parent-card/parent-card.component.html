@@ -1,0 +1,23 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-success text-white">
+          <p class="h4">Parent Card</p>
+        </div>
+        <div class="card-body bg-light">
+          <form>
+            <div class="form-group">
+              <input
+                name="text"
+                [(ngModel)]="pText"
+                type="text" class="form-control">
+            </div>
+            <p class="h4">From Child : {{data}}</p>
+          </form>
+          <app-child-card [cText]="pText" (sendData)="data=$event"></app-child-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

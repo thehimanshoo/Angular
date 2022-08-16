@@ -1,0 +1,119 @@
+Angular Routing (ActivatedRoute)
+-----------------
+1) Route Params
+
+Ex: /employees/:id ->
+
+	/employees -> all (5)
+	/employees/1 -> first Employee
+	/employees/2 -> first Employee
+	/employees/3 -> first Employee
+	/employees/4 -> first Employee
+	/employees/5 -> first Employee
+
+
+	activatedRoute.paramMap.subscribe((param) => {
+		let employeeId = param.get('id');
+	});
+
+2) Query Params
+
+Ex: api.github.com/users/thenaveensaggam?client_id=""&client_secret=''
+
+Ex: activatedRoute.queryParamMap.subscribe((param) => {
+		let cliendId = param.get('client_id');
+		let clientSecret = param.get('client_secret');
+	});
+
+Angular Modules
+---------------
+Shopping Cart :
+---------------
+-> root Module : home , navbar , spinner , about
+Ex:
+
+	shoppingcart.com/ -> home
+	shoppingcart.com/about -> about
+	shoppingcart.com/contact -> contact
+
+
+-> Users Module -> login , registration , profile
+Ex:
+
+	shoppingcart.com/users/login -> login
+	shoppingcart.com/users/register -> registration
+	shoppingcart.com/users/profile -> profile
+
+-> Products Module -> mens , womens , kids , upload , product-details
+Ex:
+
+	shoppingcart.com/products/men -> mens collection
+	shoppingcart.com/products/women -> womens collection
+	shoppingcart.com/products/kids -> kids collection
+
+-> Orders Module -> cart , checkout , Order-List
+-> Payments Module -> payments
+
+
+	ng generate module <name> --route <route> --module app.module
+
+angular Routing with Modules
+------------------------------
+Modules : customers , employees , stocks
+
+Lazy loading ->
+
+folder Structure
+----------------
+app
+   -> root
+		-> components
+			-> navbar
+			-> home -> /
+			-> about -> /about
+			-> contact -> /contact
+		-> models
+		-> services
+   -> customers (ng generate module customers --route customers --module app.module)
+		-> components
+			-> customer-list -> /list
+			-> customer-details -> list/:id
+		-> models
+			-> ICustomer
+		-> services
+			-> customer.service
+	-> employees (ng generate module employees --route employees --module app.module)
+		-> components
+			-> employee-list
+			-> employee-details
+		-> models
+			-> IEmployee
+		-> services
+			-> employee.service
+
+	-> stocks  (ng generate module stocks --route stocks --module app.module)
+		-> components
+			-> stock-list
+			-> stock-details
+		-> models
+			-> IStock
+		-> services
+			-> stock.service
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

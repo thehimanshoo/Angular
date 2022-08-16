@@ -1,0 +1,15 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <p class="h4">Parent Component</p>
+        </div>
+        <div class="card-body">
+          <p>From Child : {{text}}</p>
+          <app-child [msg]="message" (sendData)="text=$event"></app-child>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

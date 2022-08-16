@@ -1,0 +1,62 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-secondary text-white">
+          <p class="h4">Hobby Selector (*ngSwitch)</p>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <form>
+                <div class="form-check">
+                  <input
+                    [(ngModel)]="hobby"
+                    class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="eating" checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    Eating
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    [(ngModel)]="hobby"
+                    class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="coding">
+                  <label class="form-check-label" for="exampleRadios2">
+                    Coding
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    [(ngModel)]="hobby"
+                    class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="sleeping">
+                  <label class="form-check-label" for="exampleRadios3">
+                    Sleeping
+                  </label>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-8">
+              <div [ngSwitch]="hobby">
+                <div *ngSwitchCase="'eating'" class="card animated jello">
+                  <div class="card-body bg-success text-white">
+                    <p class="h2">Eating</p>
+                  </div>
+                </div>
+                <div *ngSwitchCase="'coding'" class="card animated jello">
+                  <div class="card-body bg-warning text-white">
+                    <p class="h2">Coding</p>
+                  </div>
+                </div>
+                <div *ngSwitchCase="'sleeping'" class="card animated jello">
+                  <div class="card-body bg-danger text-white">
+                    <p class="h2">Sleeping</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

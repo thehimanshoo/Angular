@@ -1,0 +1,25 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header bg-success text-white">
+          <p #heading class="h4">Client Card</p>
+        </div>
+        <div class="card-body">
+          <p #paragraph>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur eos ipsam ipsum laborum, nobis quisquam vel veritatis voluptatibus. Animi assumenda eveniet ex, excepturi, illum itaque modi neque pariatur quidem rerum sequi ut voluptatem! Deserunt dicta dolorem iste quo ullam ut?</p>
+          <button (click)="send(paragraph)" class="btn btn-success btn-sm">Send</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header bg-secondary text-white">
+          <p class="h4">Server Card</p>
+        </div>
+        <div class="card-body">
+          <p>{{serverMessage}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

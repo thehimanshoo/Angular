@@ -1,0 +1,43 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <p class="h4">Product Cart</p>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci delectus eaque, eligendi fugit illo illum ipsam neque nihil odio praesentium, similique, soluta temporibus! Assumenda ducimus, illo magnam minima mollitia perferendis?</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <table class="table table-hover text-center table-light table-striped">
+        <thead class="bg-dark text-white">
+          <tr>
+            <th>SNO</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{product.id}}</td>
+            <td>
+              <img [src]="product.image" alt="" width="70" height="70">
+            </td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>
+              <i class="fa fa-minus-circle" (click)="decrQty()"></i>
+              {{product.qty}}
+              <i class="fa fa-plus-circle" (click)="incrQty()"></i>
+            </td>
+            <td>{{product.qty * product.price}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+

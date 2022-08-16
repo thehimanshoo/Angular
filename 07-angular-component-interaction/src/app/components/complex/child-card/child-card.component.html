@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-secondary text-white">
+          <p class="h4">Child Card</p>
+        </div>
+        <div class="card-body bg-info">
+            <form>
+              <div class="form-group">
+                <input
+                  name="childText"
+                  [(ngModel)]="childText"
+                  (input)="inputText()"
+                  type="text" class="form-control">
+              </div>
+              <p class="h4 text-white">From Parent : {{cText}}</p>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

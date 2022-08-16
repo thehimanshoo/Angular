@@ -1,0 +1,107 @@
+Authentication & Authorization
+------------------------------
+-> Event Booking App (MEAN Stack Application)
+---------------------
+-> Free Events -> public access
+-> Pro Events -> private access (Login)
+-> Upload Events -> private access + Auth (Login + Admin)
+
+-> Login
+-> Registration
+
+client Side Configuration (Angular)
+-------------------------
+Folder Structure
+-----------------
+app
+	-> root
+		-> components
+			-> home
+			-> navbar
+		-> models
+		-> services
+		-> guards
+		-> interceptors
+	-> 	users (ng g module users --route users --module app.module)
+		 -> components
+				-> login
+				-> registration
+		 -> models
+				-> IUser
+		 -> services
+				-> user.service
+	-> events (ng g module events --route events --module app.module)
+		-> components
+				-> free-events
+				-> pro-events
+				-> upload-events
+		-> models
+				-> IEvent
+		-> services
+				-> event.service
+
+
+Server Side Configuration (Express JS , Mongo DB)
+-------------------------
+modules : express , cors , dotenv , bcryptjs , gravatar , jsonwebtoken , mongoose
+
+npm install express cors dotenv bcryptjs gravatar jsonwebtoken mongoose
+
+REST API
+--------
+router : userRouter -> /users
+         eventRouter -> /events
+
+userRouter :
+------------
+1. Registration : URL : http://127.0.0.1:5000/users/register
+                  method : POST
+				  fields : name , email , password
+
+2. Login : URL : http://127.0.0.1:5000/users/login
+                  method : POST
+				  fields : email , password
+
+
+eventRouter :
+-------------
+1. Get Free Events : URL : http://127.0.0.1:5000/events/free
+					  method : GET
+					  fields : no-fields
+
+2. Get PRO Events : URL : http://127.0.0.1:5000/events/pro
+					  method : GET
+					  fields : no-fields
+
+3. Upload Events : URL : http://127.0.0.1:5000/events/upload
+					  method : POST
+					  fields : name , image , date , price , type , info
+
+DATABASE Configuration
+-----------------------
+Database Name : events-booking-angular
+Tables : users , events
+Users Table ->
+		name : string,
+		email : string,
+		password : string,
+		avatar : string,
+		isAdmin : boolean,
+		created : date
+
+Events Table ->
+
+		name : string,
+		image : string,
+		date : string,
+		price : number,
+		type : string,
+		info : string,
+		created : date
+
+
+
+
+
+
+

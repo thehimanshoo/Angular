@@ -1,0 +1,29 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <p class="h3">Stop Watch</p>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque dicta enim ipsam nisi nostrum quasi! Autem consequuntur ex facilis labore nihil placeat recusandae veniam voluptates. Consequuntur corporis deleniti ducimus ratione!</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 m-auto">
+      <div class="card">
+        <div class="card-header bg-secondary text-white">
+          <p class="h4">Stop Watch</p>
+        </div>
+        <div class="card-body text-center">
+          <h3 class="display-3">
+            <span>{{leadingZero(minutes)}}</span> :
+            <span>{{leadingZero(seconds)}}</span> :
+            <span>{{leadingZero(milliSeconds)}}</span>
+          </h3>
+        </div>
+        <div class="card-footer text-center">
+          <button (click)="start()" class="btn btn-success btn-sm">start</button>
+          <button (click)="stop()" class="btn btn-danger btn-sm">stop</button>
+          <button (click)="reset()" class="btn btn-warning btn-sm">reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

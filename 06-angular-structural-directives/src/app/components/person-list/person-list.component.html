@@ -1,0 +1,36 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <p class="h3 text-danger">Persons Data</p>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aut consequatur doloribus enim fugiat itaque laborum magni nesciunt suscipit voluptatum? Aliquam dicta facilis ipsam, iure maxime quam quo repudiandae ut!</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table table-hover text-center table-danger table-striped">
+        <thead class="bg-dark text-white">
+          <tr>
+            <th>SNO</th>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let person of persons">
+            <td>{{person.login.uuid.substr(person.login.uuid.length - 4)}}</td>
+            <td>
+              <img [src]="person.picture.large" alt="" width="50" height="50"/>
+            </td>
+            <td>{{person.name.first}} {{person.name.last}}</td>
+            <td>{{person.dob.age}} Yrs</td>
+            <td>{{person.email}}</td>
+            <td>{{person.location.city}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

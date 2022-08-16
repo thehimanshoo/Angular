@@ -1,0 +1,36 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <p class="h3 text-success">Employee List</p>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aut distinctio earum enim eos error et facilis ipsa itaque laudantium maiores, modi nihil omnis quam quibusdam quis repudiandae sint voluptas!</p>
+    </div>
+  </div>
+  <div class="row" *ngIf="employees.length > 0">
+    <div class="col">
+      <table class="table table-striped table-hover text-center table-success">
+        <thead class="bg-dark text-white">
+          <tr>
+            <th>SNO</th>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees">
+            <td>{{employee.login.uuid.substr(employee.login.uuid.length - 4)}}</td>
+            <td>
+              <img [src]="employee.picture.large" alt="" width="50" height="50">
+            </td>
+            <td>{{employee.name.first}} {{employee.name.last}}</td>
+            <td>{{employee.dob.age}} Yrs</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.location.city}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

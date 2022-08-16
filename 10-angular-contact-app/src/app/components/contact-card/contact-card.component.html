@@ -1,0 +1,21 @@
+<div class="card sticky-top" *ngIf="selectedContact">
+  <div class="card-header bg-danger text-white text-center p-5">
+  </div>
+  <div class="card-body text-center">
+    <img [src]="selectedContact.picture.large" class="rounded-circle contact-img" alt="">
+    <ul class="list-group mt-3">
+      <li class="list-group-item list-group-item-danger">
+        {{selectedContact.name.first}} {{selectedContact.name.last}}
+      </li>
+      <li class="list-group-item list-group-item-danger">
+        {{selectedContact.email}}
+      </li>
+      <li class="list-group-item list-group-item-danger">
+        {{selectedContact.dob.age}} Yrs
+      </li>
+      <li class="list-group-item list-group-item-danger">
+        {{selectedContact.location.city}}
+      </li>
+    </ul>
+  </div>
+</div>

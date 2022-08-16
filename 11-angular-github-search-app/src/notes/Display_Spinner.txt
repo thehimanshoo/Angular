@@ -1,0 +1,39 @@
+https://www.c-sharpcorner.com/article/how-to-add-loaderspinner-in-angular-8-application/
+
+-> Install ngx spinner library in this project, to install ngx spinner library use the following command
+   
+   npm install ngx-spinner --save
+
+-> Now Update app.module.ts
+   Open app.module.ts file and add Import NgxSpinnerModule in the root module
+   
+   import { NgxSpinnerModule } from "ngx-spinner";  
+   imports: [  
+    BrowserModule,  
+    AppRoutingModule,  
+    HttpClientModule,  
+    NgxSpinnerModule  
+  ],  
+  
+-> Now open employeedetails.component.ts file and import NgxSpinnerService   
+	
+	constructor(private employeeService: EmployeeService,  
+		private SpinnerService: NgxSpinnerService) { } 
+   ngOnInit() {  
+     this.GetemployeeDetails();  
+   }   
+   GetemployeeDetails() {  
+    this.SpinnerService.show();  
+    this.employeeService.GetemployeeDetails().subscribe((data: any) => {  
+      this.emp = data;  
+      console.log(this.emp);  
+       this.SpinnerService.hide();  
+     });  
+   }
+   
+-> Open employeedetails.component.html file and following lines
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#ff0505" type = "ball-clip-rotate" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+
+	
+
+		
